@@ -1,4 +1,4 @@
-name   名字: Build Static Blog
+name: Build Static Blog
 on: [push]  # 代码推送时自动触发
 jobs:
   build:
