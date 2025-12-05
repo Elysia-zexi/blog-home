@@ -1,0 +1,16 @@
+name   名字: Build Static Blog
+on: [push]  # 代码推送时自动触发
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4  # 拉取仓库代码
+      
+      - name: Package static files
+        uses: actions/upload-artifact@v4  # 打包并上传产物
+        with:
+          name: blog-static-files  # 下载的压缩包名称
+          path: |  # 打包根目录所有文件（排除无用的.git等）
+            ./
+            !.git/
+            !.github/
